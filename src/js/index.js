@@ -1,5 +1,21 @@
 import '../scss/style.scss';
 
+// Мобильный меню
+
+let burgerBtn = document.querySelector(".button-item_burger");
+let burgerBtnClose = document.querySelector(".button-item_close");
+let mobileMenuContainer = document.querySelector(".aside");
+
+if (!mobileMenuContainer.classList.contains("aside_show")) {
+  burgerBtn.addEventListener("click", () => {
+    mobileMenuContainer.classList.add("aside_show");
+  })
+}
+
+burgerBtnClose.addEventListener("click", () => {
+  mobileMenuContainer.classList.remove("aside_show");
+})
+
 // Показать и скрывать брендов
 let toggleBtnServices = document.querySelector(".services__btn");
 let servicesGroup = document.querySelector(".services__group");

@@ -8,64 +8,119 @@
 </head>
 <body>
 <div class="container">
-  <header class="header">
-    <div class="header__inner">
-      <div class="header__buttons">
-        <div class="header__buttons-left">
-          <button class="button-item button-item_burger"></button>
-          <div class="header__logo">
-            <a href="#"><img class="logo" src="./img/logo.svg" alt="Logo company"></a>
+  <aside class="aside">
+    <div class="aside__inner">
+      <div class="aside__inner-top">
+        <header class="aside__header">
+          <div class="aside__header-left">
+            <button class="button-item button-item_close"></button>
+            <div class="aside__logo">
+              <a href="#"><img class="logo" src="./img/logo.svg" alt="Logo company"></a>
+            </div>
           </div>
+          <div class="aside__header-right">
+            <button class="button-item button-item_search_loupe_background"></button>
+          </div>
+        </header>
+        <nav class="aside__nav">
+          <ul class="aside__menu">
+            <li class="nav__menu-item"><a class="nav-link active" href="#">Ремонт техники</a></li>
+            <li class="nav__menu-item"><a class="nav-link" href="#">Услуги и сервисы</a></li>
+            <li class="nav__menu-item"><a class="nav-link" href="#">Корпоративным клиентам</a></li>
+            <li class="nav__menu-item"><a class="nav-link" href="#">Продавцам техники</a></li>
+            <li class="nav__menu-item"><a class="nav-link" href="#">Партнерам</a></li>
+            <li class="nav__menu-item"><a class="nav-link" href="#">Производителям</a></li>
+            <li class="nav__menu-item"><a class="nav-link" href="#">Наши сервисные центры</a></li>
+            <li class="nav__menu-item"><a class="nav-link" href="#">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+      <footer class="aside__footer">
+        <div class="aside__footer-buttons">
+          <button class="button-item button-item_phone_background"></button>
+          <button class="button-item button-item_chat_background"></button>
+          <button class="button-item button-item_profile_background"></button>
         </div>
-        <div class="header__buttons-right">
-          <button class="button-item button-item_phone_background button-item_hidden"></button>
-          <button class="button-item button-item_chat_background button-item_hidden"></button>
-          <button class="button-item button-item_profile_background button-item_hidden"></button>
-          <div class="header__buttons-right--text">
-            <span class="btn-text">Оставить заявку</span>
-            <button class="button-item button-item_setting_background"></button>
+        <div class="aside__footer-mail">
+          <a href="mailto:mail@cps.com">mail@cps.com</a>
+        </div>
+        <div class="aside__footer-phone">
+          <a href="tel:8-800-890-8900">8 800 890 8900</a>
+        </div>
+        <div class="aside__footer-lang">
+          <button class="lang active-lang">RU</button>
+          <button class="lang">EN</button>
+          <button class="lang">CH</button>
+        </div>
+      </footer>
+    </div>
+  </aside>
+  <div>
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__buttons">
+          <div class="header__buttons-left">
+            <button class="button-item button-item_burger"></button>
+            <div class="header__logo">
+              <a href="#"><img class="logo" src="./img/logo.svg" alt="Logo company"></a>
+            </div>
           </div>
-          <div class="header__buttons-right--text">
-            <span class="btn-text">Статус ремонта</span>
-            <button class="button-item button-item_search_background"></button>
+          <div class="header__buttons-right">
+            <button class="button-item button-item_phone_background button-item_hidden"></button>
+            <button class="button-item button-item_chat_background button-item_hidden"></button>
+            <button class="button-item button-item_profile_background button-item_hidden"></button>
+            <div class="header__buttons-right--text">
+              <span class="btn-text">Оставить заявку</span>
+              <button class="button-item button-item_setting_background"></button>
+            </div>
+            <div class="header__buttons-right--text">
+              <span class="btn-text">Статус ремонта</span>
+              <button class="button-item button-item_search_background"></button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </header>
-  <main class="main">
-    <section class="page-heading">
-      <h1 class="title">Услуги и сервисы</h1>
-    </section>
-    <nav class="nav">
-      <ul class="nav__menu">
-        <li class="nav__menu-item"><a class="nav-link active" href="#">Ремонтируемые бренды</a></li>
-        <li class="nav__menu-item"><a class="nav-link" href="#">Ремонтируемые устройства</a></li>
-        <li class="nav__menu-item"><a class="nav-link" href="#">Цены на услуги</a></li>
-        <li class="nav__menu-item"><a class="nav-link" href="#">Адреса сервисных центров</a></li>
-        <li class="nav__menu-item"><a class="nav-link" href="#">Специальные цены</a></li>
-        <li class="nav__menu-item"><a class="nav-link nav-link_fade" href="#">Отзывы</a></li>
-      </ul>
-    </nav>
-    <section class="about">
-      <div class="about__inner">
-        <div class="about__text">
-          <p>Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете
-            отремонтировать свой ноутбук Dell с официальной гарантией производителя.
-          </p>
-          <p>Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера,
-            <span class="text-hidden">что подтверждает большое количество постоянных клиентов. Мы гордимся тем,
+    </header>
+
+    <main class="main">
+
+      <section class="page-heading">
+        <h1 class="title">Услуги и сервисы</h1>
+      </section>
+
+      <nav class="nav">
+        <ul class="nav__menu">
+          <li class="nav__menu-item"><a class="nav-link active" href="#">Ремонтируемые бренды</a></li>
+          <li class="nav__menu-item"><a class="nav-link" href="#">Ремонтируемые устройства</a></li>
+          <li class="nav__menu-item"><a class="nav-link" href="#">Цены на услуги</a></li>
+          <li class="nav__menu-item"><a class="nav-link" href="#">Адреса сервисных центров</a></li>
+          <li class="nav__menu-item"><a class="nav-link" href="#">Специальные цены</a></li>
+          <li class="nav__menu-item"><a class="nav-link nav-link_fade" href="#">Отзывы</a></li>
+        </ul>
+      </nav>
+
+      <section class="about">
+        <div class="about__inner">
+          <div class="about__text">
+            <p>Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете
+              отремонтировать свой ноутбук Dell с официальной гарантией производителя.
+            </p>
+            <p>Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера,
+              <span class="text-hidden">что подтверждает большое количество постоянных клиентов. Мы гордимся тем,
               что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.
             </span>
-          </p>
-          <button class="about__full-text-btn">Читать далее</button>
+            </p>
+            <button class="about__full-text-btn">Читать далее</button>
+          </div>
+          <div class="about__image">
+            <img src="./img/image.png" alt="Content image">
+          </div>
         </div>
-        <div class="about__image">
-          <img src="./img/image.png" alt="Content image">
-        </div>
-      </div>
-    </section>
-  </main>
+      </section>
+
+    </main>
+
+  </div>
 </div>
 </body>
 </html>
