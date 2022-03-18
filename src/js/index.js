@@ -5,16 +5,49 @@ import '../scss/style.scss';
 let burgerBtn = document.querySelector(".button-item_burger");
 let burgerBtnClose = document.querySelector(".button-item_close");
 let mobileMenuContainer = document.querySelector(".aside");
+let windowBtn = document.getElementById("screen");
 
 if (!mobileMenuContainer.classList.contains("aside_show")) {
   burgerBtn.addEventListener("click", () => {
     mobileMenuContainer.classList.add("aside_show");
+    document.getElementById("screen").style.display = "block";
   })
 }
 
+windowBtn.addEventListener("click", () => {
+  mobileMenuContainer.classList.remove("aside_show");
+  document.getElementById("screen").style.display = "none";
+  document.getElementById("call").style.right = "-600px";
+})
+
 burgerBtnClose.addEventListener("click", () => {
   mobileMenuContainer.classList.remove("aside_show");
+  document.getElementById("screen").style.display = "none";
 })
+
+// Заказать звонок
+
+let callBtn = document.querySelector(".button-item_phone_background");
+let callBtnHeader = document.getElementById("button-item_phone_background");
+let callBtnClose = document.querySelector(".request-call--close");
+
+callBtn.addEventListener("click", () => {
+  document.getElementById("call").style.right = "0px";
+  document.getElementById("call").style.transition = "300ms";
+  document.getElementById("screen").style.display = "block";
+});
+
+callBtnHeader.addEventListener("click", () => {
+  document.getElementById("call").style.right = "0px";
+  document.getElementById("call").style.transition = "300ms";
+  document.getElementById("screen").style.display = "block";
+});
+
+callBtnClose.addEventListener("click", () => {
+  document.getElementById("call").style.right = "-600px";
+  document.getElementById("call").style.transition = "300ms";
+  document.getElementById("screen").style.display = "none";
+});
 
 // Показать и скрывать брендов
 let toggleBtnServices = document.querySelector(".services__btn");
