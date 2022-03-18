@@ -69,7 +69,8 @@
           <div class="header__buttons-right">
             <button id="button-item_phone_background"
                     class="button-item button-item_phone_background button-item_hidden"></button>
-            <button class="button-item button-item_chat_background button-item_hidden"></button>
+            <button id="button-item_chat_background"
+                    class="button-item button-item_chat_background button-item_hidden"></button>
             <button class="button-item button-item_profile_background button-item_hidden"></button>
             <div class="header__buttons-right--text">
               <span class="btn-text">Оставить заявку</span>
@@ -84,24 +85,51 @@
       </div>
     </header>
 
-    <div id="call" class="request-call">
-      <div class="request-call__inner">
-        <button class="button-item button-item_close request-call--close"></button>
-        <h3 class="request-call__title block-title">Заказать звонок</h3>
-        <div class="request-call__content">
+    <div id="call" class="modal">
+      <div class="modal__inner">
+        <button class="button-item button-item_close modal--close"></button>
+        <h3 class="modal__title block-title">Заказать звонок</h3>
+        <div class="modal__content">
           <label>
-            <input class="request-call__input" type="number" placeholder="Телефон">
+            <input class="modal__input block-input" type="number" placeholder="Телефон">
           </label>
-          <p class="request-call__text">
+          <p class="modal__text">
             Нажимая “отправить”, вы даете согласие на <a class="call-text-link" href="#">обработку персональных
             данных</a>
             и соглашаетесь с нашей
             <a class="call-text-link" href="#">политикой конфиденциальности</a>
           </p>
-          <button class="request-call__btn buttons">Отправить</button>
+          <button class="modal__btn buttons">Отправить</button>
         </div>
       </div>
+    </div>
 
+    <div id="modal-feedback" class="modal modal-feedback">
+      <div class="modal__inner">
+        <button class="modal-feedback__close modal--close button-item button-item_close"></button>
+        <h3 class="modal__title block-title">Обратная связь</h3>
+        <div class="modal__content">
+          <label>
+            <input class="modal__input block-input" type="text" placeholder="Имя">
+          </label>
+          <label>
+            <input class="modal__input block-input" type="number" placeholder="Телефон">
+          </label>
+          <label>
+            <input class="modal__input block-input" type="email" placeholder="Электронная почта">
+          </label>
+          <label>
+            <textarea class="modal__input modal-feedback__textarea block-input" placeholder="Сообщение"></textarea>
+          </label>
+          <p class="modal__text">
+            Нажимая “отправить”, вы даете согласие на <a class="call-text-link" href="#">обработку персональных
+            данных</a>
+            и соглашаетесь с нашей
+            <a class="call-text-link" href="#">политикой конфиденциальности</a>
+          </p>
+          <button class="modal__btn buttons" type="submit">Отправить</button>
+        </div>
+      </div>
     </div>
 
     <main class="main">

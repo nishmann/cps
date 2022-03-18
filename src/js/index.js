@@ -18,6 +18,7 @@ windowBtn.addEventListener("click", () => {
   mobileMenuContainer.classList.remove("aside_show");
   document.getElementById("screen").style.display = "none";
   document.getElementById("call").style.right = "-600px";
+  document.getElementById("modal-feedback").style.right = "-600px";
 })
 
 burgerBtnClose.addEventListener("click", () => {
@@ -25,11 +26,14 @@ burgerBtnClose.addEventListener("click", () => {
   document.getElementById("screen").style.display = "none";
 })
 
-// Заказать звонок
+// Заказать звонок и Обратная связь
 
 let callBtn = document.querySelector(".button-item_phone_background");
+let feedbackBtn = document.querySelector(".button-item_chat_background");
 let callBtnHeader = document.getElementById("button-item_phone_background");
-let callBtnClose = document.querySelector(".request-call--close");
+let callBtnFeedback = document.getElementById("button-item_chat_background");
+let callBtnClose = document.querySelector(".modal--close");
+let feedbackBtnClose = document.querySelector(".modal-feedback__close");
 
 callBtn.addEventListener("click", () => {
   document.getElementById("call").style.right = "0px";
@@ -48,6 +52,23 @@ callBtnClose.addEventListener("click", () => {
   document.getElementById("call").style.transition = "300ms";
   document.getElementById("screen").style.display = "none";
 });
+
+callBtnFeedback.addEventListener("click", () => {
+  document.getElementById("modal-feedback").style.right = "0px"
+  document.getElementById("modal-feedback").style.transition = "300ms"
+  document.getElementById("screen").style.display = "block";
+});
+feedbackBtn.addEventListener("click", () => {
+  document.getElementById("modal-feedback").style.right = "0px"
+  document.getElementById("modal-feedback").style.transition = "300ms"
+  document.getElementById("screen").style.display = "block";
+});
+feedbackBtnClose.addEventListener("click", () => {
+  document.getElementById("modal-feedback").style.right = "-600px"
+  document.getElementById("modal-feedback").style.transition = "300ms"
+  document.getElementById("screen").style.display = "none";
+});
+
 
 // Показать и скрывать брендов
 let toggleBtnServices = document.querySelector(".services__btn");
