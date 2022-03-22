@@ -1,4 +1,7 @@
 import '../scss/style.scss';
+import Swiper, {Pagination} from "swiper";
+import 'swiper/swiper.scss';
+import 'swiper/modules/pagination/pagination.scss';
 
 // Мобильный меню
 let burgerBtn = document.querySelector(".button-item_burger");
@@ -62,7 +65,6 @@ feedbackBtnClose.addEventListener("click", () => {
   document.getElementById("screen").style.display = "none";
 });
 
-
 // Показать/Скрывать полный текс about
 let showFullText = document.querySelector(".about__full-text-btn");
 let hiddenText = document.querySelector(".about__text-full");
@@ -81,34 +83,46 @@ showFullText.addEventListener("click", () => {
 });
 
 // Показать и скрывать брендов
-// let toggleBtnServices = document.querySelector(".services__btn");
-// let servicesGroup = document.querySelector(".services__group");
-//
-// toggleBtnServices.addEventListener("click", () => {
-//   toggleBtnServices.classList.toggle("services__btn--show");
-//
-//   if (toggleBtnServices.classList.contains("services__btn--show")) {
-//     toggleBtnServices.textContent = "Скрыть";
-//     servicesGroup.classList.add("services__group--full");
-//   } else {
-//     toggleBtnServices.textContent = "Показать все";
-//     servicesGroup.classList.remove("services__group--full");
-//   }
-// });
+let toggleBtnServices = document.querySelector(".services__btn");
+let servicesGroup = document.querySelector(".services__group");
 
+toggleBtnServices.addEventListener("click", () => {
+  toggleBtnServices.classList.toggle("services__btn--show");
+
+  if (toggleBtnServices.classList.contains("services__btn--show")) {
+    toggleBtnServices.textContent = "Скрыть";
+    servicesGroup.classList.add("services__group--full");
+  } else {
+    toggleBtnServices.textContent = "Показать все";
+    servicesGroup.classList.remove("services__group--full");
+  }
+});
 
 // Swiper
 
-const swiper = new Swiper(".swiper-container", {
-  slidesPerView: "auto",
-  spaceBetween: 16,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  breakpoints: {
-    321: {
-      slidesPerView: 1
-    }
-  }
+let swiperStart = 768;
+
+function sliderInit() {
+  return new Swiper(".swiper", {
+    modules: [Pagination],
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    },
+    slidesPerView: "auto",
+    spaceBetween: 16,
+  });
+}
+
+function sliderDestroy() {
+  return sliderInit().destroy();
+}
+
+function toggleSlider() {
+  return window.innerWidth < swiperStart ? sliderInit() : sliderDestroy();
+}
+
+window.addEventListener("resize", () => {
+  toggleSlider();
 });
+
