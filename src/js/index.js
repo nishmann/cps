@@ -83,18 +83,35 @@ showFullText.addEventListener("click", () => {
 });
 
 // Показать и скрывать брендов
-let toggleBtnServices = document.querySelector(".services__btn");
-let servicesGroup = document.querySelector(".services__group");
+let toggleBtnServices = document.querySelector(".brands__btn");
+let servicesGroup = document.querySelector(".brands__group");
 
 toggleBtnServices.addEventListener("click", () => {
-  toggleBtnServices.classList.toggle("services__btn--show");
+  toggleBtnServices.classList.toggle("brands__btn--show");
 
-  if (toggleBtnServices.classList.contains("services__btn--show")) {
+  if (toggleBtnServices.classList.contains("brands__btn--show")) {
     toggleBtnServices.textContent = "Скрыть";
-    servicesGroup.classList.add("services__group--full");
+    servicesGroup.classList.add("brands__group--full");
   } else {
     toggleBtnServices.textContent = "Показать все";
-    servicesGroup.classList.remove("services__group--full");
+    servicesGroup.classList.remove("brands__group--full");
+  }
+});
+
+// Devices
+
+let toggleBtnDevices = document.querySelector(".devices__btn");
+let devicesGroup = document.querySelector(".devices__group");
+
+toggleBtnDevices.addEventListener("click", () => {
+  toggleBtnDevices.classList.toggle("devices__btn--show");
+
+  if (toggleBtnDevices.classList.contains("devices__btn--show")) {
+    toggleBtnDevices.textContent = "Скрыть";
+    devicesGroup.classList.add("devices__group--full");
+  } else {
+    toggleBtnDevices.textContent = "Показать все";
+    devicesGroup.classList.remove("devices__group--full");
   }
 });
 
@@ -102,24 +119,38 @@ toggleBtnServices.addEventListener("click", () => {
 
 let swiperStart = 768;
 
-function sliderInit() {
-  return new Swiper(".swiper", {
-    modules: [Pagination],
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true
-    },
-    slidesPerView: "auto",
-    spaceBetween: 16,
-  });
+const sliders = [
+  {selector: ".brands__inner"},
+  {selector: ".devices__inner"}
+]
+
+function sliderInit(sliders) {
+  sliders.forEach(slider => {
+    if (!slider.slider) {
+      slider.slider = new Swiper(slider.selector, {
+        modules: [Pagination],
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        },
+        slidesPerView: "auto",
+        spaceBetween: 16,
+      });
+    }
+  })
 }
 
-function sliderDestroy() {
-  return sliderInit().destroy();
+function sliderDestroy(sliders) {
+  sliders.forEach(slider => {
+    if (slider.slider) {
+      slider.slider.destroy();
+      slider.slider = null;
+    }
+  })
 }
 
 function toggleSlider() {
-  return window.innerWidth < swiperStart ? sliderInit() : sliderDestroy();
+  return window.innerWidth < swiperStart ? sliderInit(sliders) : sliderDestroy(sliders);
 }
 
 window.addEventListener("resize", () => {
