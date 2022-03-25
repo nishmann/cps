@@ -121,7 +121,8 @@ let swiperStart = 768;
 
 const sliders = [
   {selector: ".brands__inner"},
-  {selector: ".devices__inner"}
+  {selector: ".devices__inner"},
+  {selector: ".prices__inner"}
 ]
 
 function sliderInit(sliders) {

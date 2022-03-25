@@ -427,27 +427,27 @@ li {
     padding-top: 32px;
   }
 
-  .block-title {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    font-family: "TTBold", sans-serif;
-    font-size: 24px;
-    line-height: 32px;
-    letter-spacing: -0.6px;
-    color: #1b1c21;
-  }
-
-  .block-title:before {
-    content: "";
-    display: inline-block;
-    height: 40px;
-    border: 2px solid #41f6d7;
-    background: #41f6d7;
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
-  }
+  //.block-title {
+  //  margin: 0;
+  //  display: flex;
+  //  align-items: center;
+  //  gap: 25px;
+  //  font-family: "TTBold", sans-serif;
+  //  font-size: 24px;
+  //  line-height: 32px;
+  //  letter-spacing: -0.6px;
+  //  color: #1b1c21;
+  //}
+  //
+  //.block-title:before {
+  //  content: "";
+  //  display: inline-block;
+  //  height: 40px;
+  //  border: 2px solid #41f6d7;
+  //  background: #41f6d7;
+  //  border-top-right-radius: 40px;
+  //  border-bottom-right-radius: 40px;
+  //}
 
   &__content {
     position: relative;
@@ -882,10 +882,8 @@ li {
   box-sizing: border-box;
   border-top: 1px solid #d9fff5;
   @media (max-width: 767px) {
-    .block-title {
-      height: 80px;
-      padding: 16px;
-    }
+    height: 80px;
+    padding: 16px 16px;
   }
 }
 
@@ -1038,7 +1036,7 @@ li {
 @media (max-width: 848px) {
   .brands {
     &__group {
-      gap: 16px 24px;
+      gap: 16px;
       padding: 24px;
     }
 
@@ -1131,6 +1129,7 @@ li {
 // Device
 
 .devices {
+  margin-top: 20px;
 
   &__inner {
     padding: 24px 32px !important;
@@ -1238,13 +1237,312 @@ li {
   @media (max-width: 767px) {
     &__inner {
       height: 190px;
+      padding: 16px 16px 30px !important;
     }
     &__group {
       flex-wrap: nowrap;
-      gap: 16px;
+      gap: 0px;
     }
     &__item:nth-last-child(-n + 3) {
       display: block;
+    }
+  }
+}
+
+// Цены
+
+.prices {
+  background: #F8F8F8;
+
+  .block-title {
+    height: 56px;
+  }
+
+  &__inner {
+    padding: 32px !important;
+  }
+
+  &__groups {
+    width: 100%;
+    display: table !important;
+    border-collapse: collapse;
+  }
+
+  &__group-head {
+    display: table-header-group;
+
+    .row {
+      padding-bottom: 16px;
+      padding-left: 24px;
+    }
+  }
+
+  &__group {
+    padding: 24px;
+    position: relative;
+    display: table-row-group;
+    background-color: #ffffff;
+
+    .row {
+      padding: 24px;
+    }
+  }
+
+  //.group-list {
+  //  position: relative;
+  //  padding: 0 24px;
+  //}
+  .group-list {
+
+  }
+
+  &__group:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #eaeaea;
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+    //background-clip: content-box;
+  }
+
+  //&__group-underline {
+  //  width: 100%;
+  //  height: 1px;
+  //  background-color: #eaeaea;
+  //}
+
+
+  .group-row {
+    display: table-row;
+  }
+
+  .row {
+    display: table-cell;
+    font-family: "TTRegular", sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: #1B1C21;
+  }
+
+  &__group-btn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 119px;
+    font-family: "TTRegular", sans-serif;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: right;
+    letter-spacing: -0.15px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+
+  &__text {
+    padding-left: 32px;
+    margin: 0;
+    max-width: 425px;
+    font-family: "TTRegular", sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: #1B1C21;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 32px;
+    padding-top: 16px;
+    padding-bottom: 50px;
+    text-decoration: none;
+    font-family: "TTRegular", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: #1B1C21;
+  }
+
+  &__link:after {
+    content: "";
+    display: block;
+    margin-left: 10px;
+    width: 10px;
+    height: 10px;
+    background-image: url("../img/link-right.svg");
+    background-repeat: no-repeat;
+  }
+
+  &__link:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+
+    &__inner {
+      padding: 24px !important;
+    }
+    &__group {
+      .row {
+        padding: 24px 8px;
+      }
+    }
+    &__group:before {
+      content: none;
+    }
+    &__group-head {
+      .row {
+        padding-left: 8px;
+      }
+    }
+    &__text,
+    &__link {
+      padding-left: 24px;
+    }
+  }
+
+  @media (max-width: 767px) {
+
+    .swiper-slide {
+      margin-right: 16px;
+    }
+    &__inner {
+      padding: 16px 8px !important;
+      height: 233px;
+    }
+    &__groups {
+      display: flex !important;
+      flex-wrap: nowrap;
+    }
+    &__group-head {
+      display: none;
+    }
+    .group-column {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    &__group {
+      padding: 16px;
+      display: block;
+      width: 260px !important;
+      height: 200px !important;
+      border-radius: 6px;
+      box-sizing: border-box;
+
+      .row {
+        padding: 8px 0;
+        font-size: 16px;
+      }
+    }
+
+    .group-row {
+      .service,
+      .price,
+      .term {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .service:before,
+      .price:before,
+      .term:before {
+        content: "";
+        padding-bottom: 4px;
+        font-family: "TTRegular", sans-serif;
+        font-size: 16px;
+        line-height: 16px;
+        color: #7E7E82;
+        opacity: 0.72;
+      }
+
+      .service:before {
+        content: "Ремонтные услуги";
+      }
+
+      .price:before {
+        content: "Цена";
+      }
+
+      .term:before {
+        content: "Срок";
+      }
+    }
+    &__group-btn {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
+    &__text,
+    &__link {
+      padding-left: 16px;
+    }
+  }
+}
+
+// Футер
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "TTRegular", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: #7E7E82;
+  mix-blend-mode: normal;
+  opacity: 0.72;
+  padding: 32px 32px 21px 32px;
+  border-top: 1px solid #D9FFF5;
+  background: #F8F8F8;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    display: inline-block;
+    color: #7E7E82;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  &__right {
+    width: 330px;
+    text-align: right;
+  }
+
+  @media (max-width: 900px) {
+    padding: 40px 24px;
+  }
+
+  &__right {
+    width: 213px;
+  }
+
+  @media (max-width: 668px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    &__left {
+      text-align: center;
+    }
+    &__text {
+      text-align: center;
+    }
+    &__right {
+      width: 100%;
+      text-align: center;
     }
   }
 }
